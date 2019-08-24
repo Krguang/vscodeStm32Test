@@ -96,6 +96,8 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
+
+  int b[10];
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -106,8 +108,20 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
+    for (size_t i = 0; i < 10; i++)
+    {
+      b[i] = i;
+    }
+    
+
+    if (b[0] == 1)
+      {
+        HAL_GPIO_TogglePin(led1_GPIO_Port,led1_Pin);
+      }
+  
+
     HAL_GPIO_TogglePin(led1_GPIO_Port,led1_Pin);
-    HAL_Delay(100);
+    HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 } 
