@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ARM Debug",
+            "type": "cppdbg",                                                       
+            "request": "launch",                                                    
+            "program": "${workspaceFolder}/build/${workspaceRootFolderName}.elf",
+            "cwd": "${workspaceFolder}",
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:/GNU Tools ARM Embedded/8 2019-q3-update/bin/arm-none-eabi-gdb.exe",
+            "setupCommands": [
+                {
+                    "text": "target remote localhost:3333",
+                },
+                {
+                    "text": "file C:/Users/K/Desktop/Stm32VS/vscodeTest/build/vscodeTest.elf",
+                },
+                {
+                    "text": "monitor reset",
+                },
+                {
+                    "text": "monitor halt",
+                },
+                {
+                    "text": "load" ,                                     
+                }
+            ],
+            "preLaunchTask": "build"
+        }
+    ]
+}
